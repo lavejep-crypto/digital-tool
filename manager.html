@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AirHomes - Manager Console</title>
+    <style>
+        /* [COPY/PASTE the entire clean, professional CSS block here] */
+        body { font-family: 'Segoe UI', sans-serif; max-width: 800px; margin: 40px auto; padding: 25px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); background-color: #ffffff; }
+        h1 { color: #10b981; border-bottom: 2px solid #e5e7eb; padding-bottom: 10px; margin-bottom: 20px; font-size: 2em; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { border: 1px solid #e5e7eb; padding: 10px; text-align: left; font-size: 0.9em; }
+        th { background-color: #f4f6f9; }
+        #toast-container {
+    /* --- FIX: Move from top-right to center-top --- */
+    position: fixed;
+    top: 20px; /* Position from the top */
+    left: 50%; /* Start in the middle */
+    transform: translateX(-50%); /* Pull back half its width to truly center */
+    /* ------------------------------------------- */
+    z-index: 1000; 
+}
+
+/* Make sure your .toast animation is visible */
+/* ... existing toast CSS remains ... */
+
+.toast {
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 0.5s, fadeOut 0.5s 3.5s; /* Fade in and then fade out */
+    font-weight: bold;
+    color: white;
+}
+
+.toast.success {
+    background-color: #10b981; /* Green */
+}
+
+.toast.error {
+    background-color: #ef4444; /* Red */
+}
+
+/* Simple CSS animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+        /* Add the necessary toast and button CSS from the previous step */
+        /* ... */
+    </style>
+</head>
+<body>
+    <h1>AirHomes - Audit & Export Console</h1>
+    <p>LUXE AND LAVISH | Welcome, Manager.</p>
+    
+
+<button onclick="exportLogToCSV()" id="exportCsvButton">Export Full KRA/Police Log</button> 
+    
+    <hr>
+    
+    <h2>Live Audit Log (Last 10 Entries)</h2>
+    <table id="auditLogTable">
+        <thead>
+            <tr>
+                <th>Time Logged</th>
+                <th>Guest Name</th>
+                <th>ID/Passport</th>
+                <th>Unit</th>
+            </tr>
+        </thead>
+        <tbody>
+            </tbody>
+    </table>
+    
+    <p style="margin-top: 30px;"><a href="checkin.html">Staff Check-In Page</a></p>
+    
+    <div id="toast-container"></div>
+    
+    <script src="script.js"></script> 
+</body>
+</html>

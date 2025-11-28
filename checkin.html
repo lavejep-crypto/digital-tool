@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <head>
+    <link rel="stylesheet" href="style.css"> 
+</head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Compliance Log Tool </title>
+    <style>
+        #toast-container {
+    /* --- FIX: Move from top-right to center-top --- */
+    position: fixed;
+    top: 20px; /* Position from the top */
+    left: 50%; /* Start in the middle */
+    transform: translateX(-50%); /* Pull back half its width to truly center */
+    /* ------------------------------------------- */
+    z-index: 1000; 
+}
+
+/* Make sure your .toast animation is visible */
+/* ... existing toast CSS remains ... */
+
+.toast {
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 0.5s, fadeOut 0.5s 3.5s; /* Fade in and then fade out */
+    font-weight: bold;
+    color: white;
+}
+
+.toast.success {
+    background-color: #10b981; /* Green */
+}
+
+.toast.error {
+    background-color: #ef4444; /* Red */
+}
+
+/* Simple CSS animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+        body { font-family: Arial, Helvetica, sans-serif; max-width: 400px; margin: 20px auto; padding: 15px; border: 1px solid #ccc; border-radius: 8px; }
+        input, button { width: 100%; padding: 10px; margin: 8px 0; box-sizing: border-box;background-color: black,goldenrod; }
+        h1 { text-align: center; color: #000000;font-size: x-large;}
+        p { text-align: center; color: #000000;font-size: medium;font-family: fantasy;}
+      
+    </style>
+</head>
+<body>
+    <div id="toast-container"></div>
+    <h1>Guest Compliance Check-In</h1>
+    <p>LUXE AND LAVISH </p>
+    
+    <form id="guestForm">
+        <label for="name">Guest Name (Full):</label>
+        <input type="text" id="name" required><br>
+
+        <label for="id_passport">ID/Passport Number (Mandatory):</label>
+        <input type="text" id="id_passport" required><br>
+
+        <label for="unit">Property Unit (e.g., Villa A1):</label>
+        <input type="text" id="unit" required><br>
+        
+        <label for="check_in">Check in:</label>
+        <input type="datetime-local" id="check_in" required><br>
+
+        <button type="submit">Log Guest & Check-In</button>
+    </form>
+    
+    <hr>
+    <a href="manager.html" style="display: block; text-align: center; margin-top: 15px;">Manager Console (Audit Access)</a>
+
+    <script src="script.js"></script> 
+    <script src="script.js"></script> 
+    </body>
+    </body>
+</html>

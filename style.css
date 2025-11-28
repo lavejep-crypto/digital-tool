@@ -1,0 +1,112 @@
+    body { 
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+        background-image: url(../../Semtimel.png); 
+        background-size: cover;
+        color: #000000; /* Dark gray text */
+        max-width: 400px; 
+        margin: 40px auto; 
+        padding: 25px; 
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Subtle lift */
+        background: blur(80px);
+    }
+
+    /* Headings */
+    h1 { 
+        text-align: center; 
+        color: #000000; /* Green brand color */
+        border-bottom: 2px solid #e5e7eb;
+        padding-bottom: 10px;
+        margin-bottom: 20px;
+        font-size: 2.8em;
+    }
+
+   
+
+    input, button { 
+        width: 100%; 
+        padding: 12px; 
+        border: 1px solid #d1d5db; 
+        border-radius: 6px;
+        box-sizing: border-box;
+        font-size: 1em;
+        transition: border-color 0.3s;
+    }
+    
+    input:focus {
+        border-color: rgb(194, 146, 26);
+        outline: none;
+    }
+
+    /* Buttons */
+    button {
+        background-color: #10b981; /* Green for action */
+        color: white;
+        border: none;
+        cursor: pointer;
+        margin-top: 20px;
+        font-weight: bold;
+    }
+    
+    #exportCsvButton {
+        background: linear-gradient(to right, #000000, rgb(194, 146, 26)); /* Black to Gold gradient */
+
+    }
+
+    button:hover {
+        opacity: 0.9;
+        color: #000000;
+    }
+
+    /* Confirmation Message Style */
+    .success-message {
+        background: linear-gradient(to right, #000000, rgb(194, 146, 26)); 
+        color: #065f46; 
+        padding: 15px; 
+        border-radius: 6px; 
+        margin-top: 20px;
+        text-align: center;
+        font-weight: bold;
+    }
+
+    #toast-container {
+    /* --- FIX: Move from top-right to center-top --- */
+    position: fixed;
+    top: 20px; /* Position from the top */
+    left: 50%; /* Start in the middle */
+    transform: translateX(-50%); /* Pull back half its width to truly center */
+    /* ------------------------------------------- */
+    z-index: 1000; 
+}
+
+/* Make sure your .toast animation is visible */
+/* ... existing toast CSS remains ... */
+
+.toast {
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 0.5s, fadeOut 0.5s 3.5s; /* Fade in and then fade out */
+    font-weight: bold;
+    color: white;
+}
+
+.toast.success {
+    background-color: #10b981; /* Green */
+}
+
+.toast.error {
+    background-color: #ef4444; /* Red */
+}
+
+/* Simple CSS animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
